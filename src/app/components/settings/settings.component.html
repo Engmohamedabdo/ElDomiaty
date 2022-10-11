@@ -1,0 +1,153 @@
+<section class="">
+
+  <div class="pt-5 container">
+    <div class="row">
+      <!-- profile -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" routerLink="/profile">
+          <button class="btn-sett">profile</button>
+        </div>
+      </div>
+      <!-- favourite -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" routerLink="/favourite">
+          <button class="btn-sett">favourite</button>
+        </div>
+      </div>
+      <!-- wallet -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" data-toggle="modal" data-target="#modalWallet">
+          <button class="btn-sett">wallet</button>
+        </div>
+      </div>
+      <!-- language -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" data-toggle="modal" data-target="#modalLanguage">
+          <button class="btn-sett">language</button>
+        </div>
+      </div>
+      <!-- About us -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" routerLink="/aboutUs">
+          <button class="btn-sett">About us</button>
+        </div>
+      </div>
+      <!-- Conact us -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" routerLink="/customerService">
+          <button class="btn-sett">contact us</button>
+        </div>
+      </div>
+      <!-- terms and condition -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" routerLink="/termsAndConditions">
+          <button class="btn-sett">terms and condition</button>
+        </div>
+      </div>
+      <!-- Change Password -->
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="content" routerLink="/changePassword">
+          <button class="btn-sett">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Start Modal Wallet -->
+<div class="modal fade" id="modalWallet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Member Wallet</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row justify-content-around">
+            <div class="mimber col-md-5 points">
+              <h2>Yous Points</h2>
+              <div class="num d-flex justify-content-between align-items-center">
+                <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                <h4>{{dataWallet?.points}}</h4>
+              </div>
+            </div>
+            <div class="mimber col-md-5 wallet">
+              <h2 class="title">Wallet</h2>
+              <div class="num d-flex justify-content-between align-items-center text-center">
+                <i class="fa-solid fa-wallet"></i>
+                <h4>{{dataWallet?.wallet}}</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <form class="my-5">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Enter pointers to change</label>
+                <input type="text" class="form-control" id="" placeholder="Pointer">
+              </div>
+              <div class="row justify-content-around">
+                <div class="mimber col-md-5 d-flex justify-content-between align-items-center text-center">
+                  <h2 class="title">Remain Points: </h2>
+                  <h4>${{dataWallet?.pointPrice}}</h4>
+                </div>
+                <div class="mimber col-md-5 d-flex justify-content-between align-items-center text-center">
+                  <h2 class="title">money: </h2>
+                  <h4>${{dataWallet?.pointPrice}}</h4>
+                </div>
+              </div>
+              <div class="buttons position-relative">
+                <button type="submit" class="btn btn-primary position-absolute mr-5 my-3"
+                  style="right: 0; padding: 5px 25px;">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-primary">Done</button> -->
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Wallet -->
+
+
+<!-- Start Modal Language -->
+<div class="modal fade" id="modalLanguage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">Language
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Language</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row justify-content-around">
+            <div class="mimber col-md-5 points">
+              <h3 class="text" data-i18n="selectLanguage">Select a language</h3>
+              <select class="custom-select">
+                <!-- <option selected>Select a language</option> -->
+                <option value="en" selected>English</option>
+                <option value="ar">Arabic</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-around">
+        <button type="button" class="btn btn-primary">Done</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Wallet -->

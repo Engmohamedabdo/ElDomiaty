@@ -1,0 +1,168 @@
+<div class="shopping position-relative">
+
+  <div class="container">
+
+    <div class="shop-cart mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row" style="text-align: center;">
+              <h1 class="font-weight-bold text-black pt-4">Shopping Cart</h1>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div id="cart-container" class="container py-5">
+              <table style="text-align: center;">
+                <thead>
+                  <tr>
+                    <td rowspan="2">Details</td>
+                    <!-- <td>Name</td> -->
+                    <td>Quantity</td>
+                    <!-- <td>Total</td> -->
+                    <!-- <td>Edit</td> -->
+                    <td>Delete</td>
+                    <td>Price</td>
+                    <td>Payment Method</td>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr *ngFor="let cart of cartShopping.bascet">
+                    <td>
+                      <a routerLink="" class="d-flex align-items-center">
+                        <img [src]="imageBaseUrl+cart.imageurl" class="rounded m-2" alt="" />
+                        <h3 class="title">{{cart.name}}</h3>
+                      </a>
+                    </td>
+                    <!-- <td><a routerLink="">
+                        <h2>حلويات</h2>
+                      </a></td> -->
+                    <td class="td-input">
+                      <input type="number" class="input-num form-control" min="1" [value]="cart.productCount" />
+                    </td>
+                    <td>
+                      <a routerLink="">
+                        <i class="fa-solid fa-trash"></i>
+                      </a>
+                    </td>
+                    <td><span>EGP {{cart.price}}</span></td>
+                    <td><span>Cash Payment</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <a routerLink="" class="d-flex align-items-center">
+                        <img src="../../../assets/Home/sweet-archives-pictures-25.png" class="rounded m-2" alt="" />
+                        <h3 class="title">مشكل حلويات</h3>
+                      </a>
+                    </td>
+                    <td class="td-input">
+                      <input type="number" class="input-num form-control" min="1" value="1" />
+                    </td>
+                    <td class="">
+                      <i class="fa-solid fa-trash icon"></i>
+                      <div routerLink="" class="d-flex justify-content-center align-item-center w-100">
+                      </div>
+                    </td>
+                    <td><span>EGP 70</span></td>
+                    <td><span>Cash Payment</span></td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <div class="row">
+
+                <div class="col-md-3 my-3">
+                  <div class="min-cart d-flex justify-content-around py-3 m-2">
+                    <h2>Discount :</h2>
+                    <h2>0.00</h2>
+                  </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                  <div class="min-cart d-flex justify-content-around py-3 m-2">
+                    <h2>Delivery :</h2>
+                    <h2>EGP {{cartShopping.userAddress.price}}</h2>
+                  </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                  <div class="min-cart d-flex justify-content-around py-3 m-2">
+                    <h2>subtotal :</h2>
+                    <h2>EGP {{cartShopping.productsCount}}</h2>
+                  </div>
+                </div>
+
+                <div class="col-md-3 my-3">
+                  <div class="min-cart d-flex justify-content-around py-3 m-2">
+                    <h2>Total :</h2>
+                    <h2>EGP {{cartShopping.productsPrice}}</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center align-items-center ">
+
+                <div class="col-md-4">
+                  <div class="promo">
+                    <div class="title col-md-12 m-0">
+                      <h2>Number : <button class="btn text-primary" (click)="addNumber()">add</button></h2>
+                    </div>
+                    <div class="col-md-12 m-0" *ngIf="number">
+                      <div class="col-md-12 m-0">
+                        <div class="input-promo d-flex align-items-center">
+                          <input type="text" class="form-control w-50 p-3" style="border-radius: 5px 0 0 5px;"
+                            placeholder="01012345678">
+                          <button class="btn btn-primary px-3" style="border-radius: 0 5px 5px 0;">Confirm</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="promo">
+                    <div class="title col-md-12 m-0">
+                      <h2>Address : <button class="btn text-primary" (click)="addAddress()">add</button></h2>
+                    </div>
+                    <div class="col-md-12 m-0" *ngIf="address">
+                      <div class="col-md-12 m-0">
+                        <div class="input-promo d-flex align-items-center">
+                          <input type="text" class="form-control w-50 p-3" style="border-radius: 5px 0 0 5px;"
+                            placeholder="Enter the Address">
+                          <button class="btn btn-primary px-3" style="border-radius: 0 5px 5px 0;">Confirm</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="promo">
+                    <div class="title col-md-12 m-0">
+                      <h2>Copon : <button class="btn text-primary" (click)="addCopon()">add</button></h2>
+                    </div>
+                    <div class="col-md-12 m-0" *ngIf="copon">
+                      <div class="col-md-12 m-0">
+                        <div class="input-promo d-flex align-items-center">
+                          <input type="text" class="form-control w-50 p-3" style="border-radius: 5px 0 0 5px;"
+                            placeholder="Enter the discount code">
+                          <button class="btn btn-primary px-3" style="border-radius: 0 5px 5px 0;">Confirm</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col md 12 mt-3">
+                  <div class="btns text-center">
+                    <button class="btn btn-primary" type="submit">Checkout</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

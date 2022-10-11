@@ -1,0 +1,45 @@
+<section class="">
+
+
+
+  <div class="login">
+    <div class="container" data-aos="fade-down" data-aos-duration="800">
+      <div class="form">
+        <div class="title" data-aos="fade-down" data-aos-duration="800">Confirm Password</div>
+        <form action="#" [formGroup]="confirmPass" (ngSubmit)="restPassword()">
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1000">
+            <input [type]=" showPassword ? 'text' : 'password' " class="password" formControlName="password" id=""
+              placeholder="Password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" (click)='showHidePassword()' *ngIf="showPassword === false"></i>
+            <i class="uil uil-eye showHidePw" (click)='showHidePassword()' *ngIf="showPassword === true"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="password && password.invalid && password.touched ">*Passwords
+              must
+              be at Minimum six characters, at least one letter</span>
+          </div>
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1100">
+            <input [type]=" showPassword ? 'text' : 'password' " class="password" formControlName="confirmPassword"
+              id="" placeholder="Confirm password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" (click)='showHidePassword()' *ngIf="showPassword === false"></i>
+            <i class="uil uil-eye showHidePw" (click)='showHidePassword()' *ngIf="showPassword === true"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="confirmPassword?.value !== password?.value">*Confirm the password
+              is different from the password</span>
+            <span class="text-danger ml-2 mt-1"
+              *ngIf="confirmPassword && confirmPassword.invalid && confirmPassword.touched ">*confirmPassword is
+              required</span>
+          </div>
+          <div class="form-group button text-center" data-aos="fade-down" data-aos-duration="1200">
+            <button type="button" routerLink="/login" [disabled]="confirmPass.invalid" (click)="restPassword()"
+              class="btn btn-success w-100 py-3">Activate Password</button>
+          </div>
+        </form>
+        <div class="login-signup" data-aos="fade-down" data-aos-duration="1300">
+          <span class="text">Not a member?
+            <a routerLink="/login" class="text signup-text">Sign in now</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

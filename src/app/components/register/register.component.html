@@ -1,0 +1,88 @@
+<section class="">
+
+  <div class="register py-5">
+
+    <div class="container">
+      <div class="form">
+        <div class="title text-center" data-aos="fade-down" data-aos-duration="800">Register New</div>
+        <form action="#" [formGroup]="registerForm" (ngSubmit)="addUser()">
+          <div class="fullName">
+            <div class="input-field mr-3" data-aos="fade-down" data-aos-duration="800">
+              <input type="text" formControlName="firstName" id="firstName" placeholder="First Name" required>
+              <i class="uil uil-user icon"></i>
+              <span class="text-danger mr-2 mt-1" *ngIf="firstName && firstName.invalid && firstName.touched ">*first
+                name is required</span>
+            </div>
+            <div class="input-field ml-3" data-aos="fade-down" data-aos-duration="800">
+              <input type="text" formControlName="lastName" id="lastName" placeholder="Last Name" required>
+              <i class="uil uil-user icon"></i>
+              <span class="text-danger ml-2 mt-1" *ngIf="lastName && lastName.invalid && lastName.touched ">*last name
+                is required</span>
+            </div>
+          </div>
+          <div class="input-field" data-aos="fade-down" data-aos-duration="1000">
+            <input type="email" formControlName="email" id="email" placeholder="Email" required>
+            <i class="uil uil-envelope icon"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="email && email.invalid && email.touched ">*email is
+              required</span>
+          </div>
+          <div class="input-field" data-aos="fade-down" data-aos-duration="1100">
+            <input type="tel" formControlName="tel" id="tel" placeholder="01012345678" required>
+            <i class="uil uil-phone icon"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="tel && tel.invalid && tel.touched ">*Mobile number is
+              required</span>
+            </div>
+            <div class="input-field" data-aos="fade-down" data-aos-duration="1100">
+              <input type="text" formControlName="address" id="tel" placeholder="Cairo" required>
+              <i class="fa-sharp fa-solid fa-map-location-dot icon"></i>
+              <span class="text-danger ml-2 mt-1" *ngIf="address && address.invalid && address.touched ">*Address number
+              is required</span>
+          </div>
+          <div class="input-field" data-aos="fade-down" data-aos-duration="1200">
+            <input [type]=" showPassword ? 'text' : 'password' " class="password" formControlName="password" id=""
+              placeholder="password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" (click)='showHidePassword()' *ngIf="showPassword === false"></i>
+            <i class="uil uil-eye showHidePw" (click)='showHidePassword()' *ngIf="showPassword === true"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="password && password.invalid && password.touched ">*Passwords
+              must
+              be at Minimum six characters, at least one letter</span>
+          </div>
+          <div class="input-field" data-aos="fade-down" data-aos-duration="1300">
+            <input [type]=" showPassword ? 'text' : 'password' " class="password" formControlName="confirmPassword"
+              id="" placeholder="Confirm Password" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw" (click)='showHidePassword()' *ngIf="showPassword === false"></i>
+            <i class="uil uil-eye showHidePw" (click)='showHidePassword()' *ngIf="showPassword === true"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="confirmPassword?.value !== password?.value">*confirm
+              password</span>
+            <span class="text-danger ml-2 mt-1"
+              *ngIf="confirmPassword && confirmPassword.invalid && confirmPassword.touched ">*confirm password</span>
+          </div>
+          <!-- <div class="checkbox-text">
+          <div class="checkbox-content">
+            <input type="check name=""box" id="logCheck">
+            <label for="logCheck" class="text">Remember me</label>
+          </div>
+          <a href="" class="text">Forgot password?</a>
+        </div> -->
+          <!-- <div class="input-field button text-center" data-aos="fade-down" data-aos-duration="1400">
+          <button routerLink="/register/verfication" type="submit" [disabled]="!registerForm.valid" (click)="addUser()"
+            class="btn btn-primary w-100 py-3">إنشاء حساب</button>
+        </div> -->
+          <div class="input-field button text-center" data-aos="fade-down" data-aos-duration="1400">
+            <button routerLink="/register/verfication" type="submit" [disabled]="!registerForm.valid"
+              routerLink="/login" class="btn btn-primary w-100 py-3">Register Now</button>
+          </div>
+
+        </form>
+
+        <div class="login-signup" data-aos="fade-down" data-aos-duration="1500">
+          <span class="text">I'm a member
+            <a routerLink="/login" class="text signup-text">Login now</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

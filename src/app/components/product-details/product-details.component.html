@@ -1,0 +1,100 @@
+<section class="detailss position-relative">
+
+
+
+
+  <div class="product-details">
+    <div class="container">
+      <!-- cart left -->
+      <div class="main d-flex align-items-center">
+        <div class="track w-100">
+          <ul>
+            <li id="slide1">
+              <!-- <img src="../../../assets/Home/Sweets-Free-Download-PNG.png" alt="" /> -->
+              <p-image src="../../../assets/Home/Sweets-Free-Download-PNG.png" alt="Image" width="500" [preview]="true">
+              </p-image>
+            </li>
+          </ul>
+        </div>
+        <!-- <owl-carousel-o class="sliders">
+          <ng-template carouselSlide class="slides" *ngFor="let image of product.imageurl; index as i">
+            <img (click)="onChangeImage(image)" [src]="imageBaseUrl+image" alt="" />
+          </ng-template>
+        </owl-carousel-o> -->
+      </div>
+      <!-- cart right -->
+      <div class="product-content">
+        <h2 class="product-title">sweets mix</h2>
+        <!-- <a routerLink="/categories" class="product-link"> Visit T-shirt Store</a> -->
+        <div class="product-rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <!-- <ngb-rating [max]="5" [(rate)]="currentRating" [readonly]="false"></ngb-rating> -->
+          <i class="bx bxs-star-half"></i>
+          <span> 4.5<span>(26)</span></span>
+        </div>
+
+        <div class="size">
+          <h2>Size Product</h2>
+          <!-- <p-dropdown [options]="cities" [(ngModel)]="cities" placeholder="Select a Size" optionLabel="size"></p-dropdown> -->
+          <select class="form-control w-25 text-center">
+            <option *ngFor="let size of optionSize" [value]="size.size" selected>{{size.size}}</option>
+          </select>
+          <!-- <button class="btn ">{{product.productSizes.productSize}}</button> -->
+        </div>
+        <h2 class="new-price font-bold my-3">Price : <span class="price-n">$50.00
+            <del class="price-o">$90.00</del>
+          </span></h2>
+        <div class="product-detail">
+          <h2 class="font-bold">Details of this product :</h2>
+          <p class="">
+            Plain Basbousa - Hazelnut - Pistachio - Cream Konafa - Mango - Osmanli - Mutadala - Nammoura - Eyelashes -
+            Linza - Maamoul - Znoud - Eat and Thank - Meshbak - Lokmat Al Qadi - Balah Al Sham - Zainab's Fingers - Nuts
+            - Gateau - Soiree - Tart - Black Tart Forest - Half and Half Tart - Chocolate - Petit Pan - Rusks - Salya
+            Baton - Pate - Croissant - Pizza - Danish - Cake - Glash - Sambousek - Qatayef - Melfie - Pizza - Feteer -
+            Meshaltet - Kahk - Halawa Al Mawlid
+          </p>
+        </div>
+        <div class="purchase-info">
+          <input type="number" class="" id="" min="1" value="1" />
+          <button class="btn btn-primary" routerLink="/shoppingCart">
+            add to cart
+            <i class="bx bx-cart-add"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Review Product</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="cont d-flex flex-column align-items-center">
+          <div class="stars">
+            <ngx-star-rating [(ngModel)]="rating3" [id]="'rating3'"></ngx-star-rating>
+          </div>
+          <div class="mb-3">Rating: {{ rating3 }}</div>
+        </div>
+
+
+        <textarea class="form-control" name="" id="" placeholder="Review Product" cols="30" rows="10"></textarea>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary mx-3" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary mx-3">Save Review</button>
+      </div>
+    </div>
+  </div>
+</div>

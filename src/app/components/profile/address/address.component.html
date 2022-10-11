@@ -1,0 +1,322 @@
+<section class="address position-relative">
+
+
+
+  <div class="container">
+    <div class="row">
+      <!-- address input -->
+      <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+        <div class="addressInput address mt-5">
+          <form action="" [formGroup]="addressForm" (ngSubmit)="address()">
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <h1 class="title my-3">Add Address</h1>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="email" formControlName="firstname" class="form-control" id="firstName"
+                    placeholder="First Name">
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" formControlName="lastname" class="form-control" id="lastName"
+                    placeholder="Last Name">
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" formControlName="adressdetails" class="form-control" id="address"
+                    placeholder="address">
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" formControlName="phonenumber" class="form-control" id="phone"
+                    placeholder="01012345678">
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group">
+                  <label>City</label>
+                  <select class="custom-select custom-select-lg mb-3 rounded-lg">
+                    <option value="0" selected>City</option>
+                    <option [value]="region.id" [id]="region.id" *ngFor="let region of regions">{{region.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group">
+                  <label>Region</label>
+                  <select class="custom-select custom-select-lg mb-3 rounded-lg" (change)="resionOption($event)"
+                    formControlName="cityid">
+                    <option value="0" selected>Region</option>
+                    <option [value]="city.id" [id]="city.id" *ngFor="let city of citys">{{city.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-check ml-3">
+                <input type="checkbox" formControlName="isdefault" class="form-check-input" id="checkbox">
+                <label class="form-check-label mx-3" for="checkbox">Make It As Default *</label>
+              </div>
+              <div class="btns d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary w-25" (submit)="address()">Add Address</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> -->
+
+      <!-- adress output -->
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000"
+        *ngFor="let address of allAddress">
+        <div class="adressOutput address mt-5 d-flex justify-content-center">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+              <h1 class="title my-3">Address</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Full Name :</h3>
+                <h2 class="">{{address.firstname}} {{address.lastname}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Phone :</h3>
+                <h2>{{address.phonenumber}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Address :</h3>
+                <h2>{{address.adressdetails}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">City :</h3>
+                <h2>{{address.cityname}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Region :</h3>
+                <h2>{{address.regionname}}</h2>
+              </div>
+            </div>
+            <!-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group d-flex justify-content-around align-items-center">
+                  <h3 class="px-3">Region :</h3>
+                  <h2>Cairo</h2>
+                </div>
+              </div> -->
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3"> Shipping Cost :</h3>
+                <h2>EGP {{address.shipingCost}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <div class="form-group d-flex justify-content-center align-items-center">
+                <!-- Button Edit trigger modal -->
+                <button class="btn btn-secondary px-3 w-50" data-toggle="modal" data-target="#exampleModal"
+                  (click)="getId(address.id);setValue()">Edit</button>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <div class="form-group d-flex justify-content-center align-items-center">
+                <!-- Button Edit trigger modal -->
+                <!-- <button class="btn btn-danger px-3 w-50" (click)="getId(address.id);deleteAddress()">Delete</button> -->
+                <button class="btn btn-danger px-3 w-50" (click)="removeEntity(address.id)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- adress output -->
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000"
+        *ngFor="let address of allAddress">
+        <div class="adressOutput address mt-5 d-flex justify-content-center">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+              <h1 class="title my-3">Address</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Full Name :</h3>
+                <h2 class="">{{address.firstname}} {{address.lastname}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Phone :</h3>
+                <h2>{{address.phonenumber}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Address :</h3>
+                <h2>{{address.adressdetails}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">City :</h3>
+                <h2>{{address.cityname}}</h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+              <div class="form-group d-flex justify-content-around align-items-center">
+                <h3 class="px-3">Region :</h3>
+                <h2>{{address.regionname}}</h2>
+              </div>
+            </div>
+            <!-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group d-flex justify-content-around align-items-center">
+                  <h3 class="px-3">Region :</h3>
+                  <h2>Cairo</h2>
+                </div>
+              </div> -->
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="form-group d-flex justify-content-around align-items-center">
+                  <h3 class="px-3"> Shipping Cost :</h3>
+                  <h2>EGP {{address.shipingCost}}</h2>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row px-4">
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                    <div class="form-group d-flex justify-content-center align-items-center">
+                      <!-- Button Edit trigger modal -->
+                      <button class="btn btn-secondary px-3 w-100" data-toggle="modal" data-target="#exampleModal"
+                        (click)="getId(address.id);setValue()">Edit</button>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                    <div class="form-group d-flex justify-content-center align-items-center">
+                      <!-- Button Edit trigger modal -->
+                      <!-- <button class="btn btn-danger px-3 w-50" (click)="getId(address.id);deleteAddress()">Delete</button> -->
+                      <button class="btn btn-warning px-3 w-100" (click)="removeEntity(address.id)">Set As A defult</button>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                    <div class="form-group d-flex justify-content-center align-items-center">
+                      <!-- Button Edit trigger modal -->
+                      <!-- <button class="btn btn-danger px-3 w-50" (click)="getId(address.id);deleteAddress()">Delete</button> -->
+                      <button class="btn btn-danger px-3 w-100" (click)="removeEntity(address.id)">Delete</button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="btns-foot d-flex justify-content-center mt-5">
+      <div class="col-6 text-center">
+        <button class="btn t-color w-50" data-toggle="modal"
+        data-target="#addressModal">Add New Address</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form action="" [formGroup]="editAddressForm" (ngSubmit)="editAddress()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Address</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+            <div class="addressInput address">
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                  <h1 class="title my-3">Edit Address</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="email" formControlName="firstname" class="form-control" id="firstName"
+                      placeholder="First Name">
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" formControlName="lastname" class="form-control" id="lastName"
+                      placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" formControlName="adressdetails" class="form-control" id="address"
+                      placeholder="address">
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" formControlName="phonenumber" class="form-control" id="phone"
+                      placeholder="01012345678">
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <label>City</label>
+                    <select class="custom-select custom-select-lg mb-3 rounded-lg" formControlName="cityid">
+                      <option value="0" selected>City</option>
+                      <option [value]="city.id" id="city.id" *ngFor="let city of citys">{{city.name}}</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="form-group">
+                        <label>Region</label>
+                        <select class="custom-select custom-select-lg mb-3 rounded-lg" (change)="resionOption($event)" formControlName="cityid">
+                          <option value="0" selected>Region</option>
+                          <option [value]="region.id" [id]="region.id" *ngFor="let region of regions" >{{region.name}}</option>
+                        </select>
+                      </div>
+                    </div> -->
+                <div class="form-group form-check ml-3">
+                  <input type="checkbox" formControlName="isdefault" class="form-check-input" id="checkbox">
+                  <label class="form-check-label mx-3" for="checkbox">Make It As Default *</label>
+                </div>
+                <div class="btns d-flex justify-content-center">
+                  <!-- <button type="submit" class="btn btn-primary w-25" (submit)="address()">Add Address</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editAddress()">Save
+            changes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

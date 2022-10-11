@@ -1,0 +1,36 @@
+<section class="">
+
+
+
+  <div class="verfication">
+    <div class="container" data-aos="fade-down" data-aos-duration="500">
+      <div class="form">
+        <div class="title text-center" data-aos="fade-down" data-aos-duration="800">Verfication</div>
+        <!-- <p class="m-5" data-aos="fade-down" data-aos-duration="800"></p> -->
+        <form action="#" [formGroup]="verficationForm" (ngSubmit)="verficationCode()">
+          <!-- <div class="form-group" data-aos="fade-down" data-aos-duration="1000">
+            <input formControlName="email" id="" placeholder="">
+            <i class="uil uil-envelope icon"></i>
+            <button class="btn btn-primary send-otp position-absolute" (click)="SendOtp()">Send</button>
+            <span class="text-danger ml-2 mt-1" *ngIf="email && email.invalid && email.touched ">*Email is required</span>
+          </div> -->
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1000">
+            <input type="text" formControlName="otp" id="" placeholder="Otp" maxlength="6" required>
+            <i class="uil uil-keyhole-circle icon"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="otp && otp.invalid && otp.touched ">*Otp is required</span>
+            <button class="btn btn-primary send-otp position-absolute" (click)="resendCode()">resend</button>
+          </div>
+          <div class="form-group button text-center" data-aos="fade-down" data-aos-duration="1400">
+            <button type="button" [disabled]="verficationForm.invalid" (click)="verficationCode()"
+              class="btn btn-success w-100 py-3">Send Otp</button>
+          </div>
+        </form>
+        <div class="login-signup" data-aos="fade-down" data-aos-duration="1600">
+          <span class="text">I'm a member
+            <a routerLink="/login" class="text signup-text">Login now</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

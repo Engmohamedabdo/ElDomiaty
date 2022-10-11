@@ -1,0 +1,39 @@
+{
+  "result": {
+    "card": [
+      {
+        "id": 1,
+        "imageURL": "../assets/images/product-1.jpg",
+        "name": "T-Shirt",
+        "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, distinctio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sequi quis voluptates fuga nihil laudantium dolorum deleniti soluta accusamus rerum?",
+        "price": "$150",
+        "status": true
+      },
+      {
+        "id": 2,
+        "imageURL": "../assets/images/product-2.jpg",
+        "name": "T-Shirt",
+        "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, distinctio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sequi quis voluptates fuga nihil laudantium dolorum deleniti soluta accusamus rerum?",
+        "price": "$170",
+        "status": false
+      },
+      {
+        "id": 3,
+        "imageURL": "../assets/images/product-3.jpg",
+        "name": "T-Shirt",
+        "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, distinctio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sequi quis voluptates fuga nihil laudantium dolorum deleniti soluta accusamus rerum?",
+        "price": "$120",
+        "status": true
+      },
+      {
+        "id": 4,
+        "imageURL": "../assets/images/product-4.jpg",
+        "name": "Shoose",
+        "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, distinctio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sequi quis voluptates fuga nihil laudantium dolorum deleniti soluta accusamus rerum?",
+        "price": "$250",
+        "status": false
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,59 @@
+<section class="">
+
+
+
+  <div class="divAlert">
+    <!-- <div class="alert alert-success w-25">
+      {{successMsg}}
+    </div>
+    <div class="alert alert-danger w-25">
+      {{errorMsg}}
+    </div> -->
+  </div>
+  <div class="login">
+    <div class="container" data-aos="fade-down" data-aos-duration="800">
+      <div class="form">
+        <div class="title text-center" data-aos="fade-down" data-aos-duration="800">Login</div>
+        <form action="#" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1000">
+            <input type="text" formControlName="email" id="" placeholder="Email" required>
+            <i class="uil uil-envelope icon"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="email && email.invalid && email.touched ">*Email is
+              required</span>
+          </div>
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1100">
+            <input [type]=" showPassword ? 'text' : 'password' " formControlName="password" id="" placeholder="password"
+              required>
+            <i class="uil uil-eye-slash showHidePw" (click)='showHidePassword()' *ngIf="showPassword === false"></i>
+            <i class="uil uil-eye showHidePw" (click)='showHidePassword()' *ngIf="showPassword === true"></i>
+            <i class="uil uil-lock icon"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="password && password.invalid && password.touched ">*password is
+              required</span>
+          </div>
+          <div class="checkbox-text">
+            <div class="checkbox-content" data-aos="fade-down" data-aos-duration="1200">
+              <input type="checkbox" formControlName="checkbox" id="logCheck">
+              <label for="logCheck" class="text">remember me</label>
+              <div class="text-danger ml-2 mt-1" *ngIf="checkbox && checkbox.invalid && checkbox.touched ">*Remember is
+                required</div>
+            </div>
+            <a routerLink="/forgetPassword" class="text" data-aos="fade-down" data-aos-duration="1300">Forgot your
+              password?</a>
+          </div>
+          <div class="form-group button text-center" data-aos="fade-down" data-aos-duration="1400">
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary w-100 py-3">Sign in now</button>
+          </div>
+          <!-- <div class="form-group button text-center" data-aos="fade-down" data-aos-duration="1400">
+            <button type="submit" [disabled]="loginForm.invalid" routerLink="/home"class="btn btn-primary w-100 py-3">تسجيل الدخول الآن</button>
+          </div> -->
+        </form>
+
+        <div class="login-signup" data-aos="fade-down" data-aos-duration="1500">
+          <span class="text">I am not a member?
+            <a routerLink="/register" class="text signup-text">Create account</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

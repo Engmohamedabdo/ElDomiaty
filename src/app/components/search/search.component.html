@@ -1,0 +1,114 @@
+<section class="">
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="allSearch d-flex flex-column justify-content-center align-center" data-aos="fade-down"
+        data-aos-duration="800">
+        <div class="col-12">
+          <div class="search">
+            <form [formGroup]="searchForm">
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="form-group">
+                    <select class="custom-select custom-select-lg mb-3">
+                      <option selected value="text">Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="form-group">
+                    <select class="custom-select custom-select-lg mb-3">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="form-group">
+                    <select class="custom-select custom-select-lg mb-3">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12 mt-2" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="form-group input-search position-relative">
+                    <input type="text" class="position-absolute w-100" placeholder="Search for product">
+                    <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+                  </div>
+                </div>
+
+                <div class="col-12 mt-4" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="form-group input-search position-relative">
+                    <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+                  </div>
+                </div>
+
+                <div class="col-12 my-5 text-center" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="form-group input-search position-relative">
+                    <!-- <hr /> -->
+                    <button class="btn btn-primary btns" (click)="getSelect()">Search</button>
+                  </div>
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- research results  -->
+        <div class="col-12">
+          <div class="container">
+            <div class="row">
+              <!-- <div class="product-search"> -->
+              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" *ngFor="let card of cards" data-aos="fade-down"
+                data-aos-duration="1000">
+                <div class="card">
+                  <div class="product-image" routerLink="/productDetails/{{card?.id}}">
+                    <img [src]="card.imageURL" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <h2>{{ card.name }}</h2>
+                    <div class="rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                    </div>
+                    <p>{{ card.details }}</p>
+                    <div class="price">{{ card.price }}</div>
+                    <div class="buttons">
+                      <button class="btn cart">add to card</button>
+                      <button *ngIf="card.status==true" class="btn favourite text-danger">
+                        <i class="fa-solid fa-heart"></i>
+                      </button>
+                      <button *ngIf="card.status==false" class="btn favourite text-transparent">
+                        <i class="fa-regular fa-heart"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>

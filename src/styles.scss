@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+/* swiper */
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #fff;
+  --main-color-hover: #39AFA3;
+  --main-color-alt: #007bff;
+  --main-transition: all 0.4s ease;
+  --main-padding-top: 50px;
+  --main-padding-bottom: 50px;
+  --main-color-rating: #fdcc0d;
+  --section-background: #ececec;
+  --main-color-border: #7bbde5;
+  --main-shadow: 1px 1px 5px 5px #eee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // background-color: #ececec !important;
+  // background-color: #4e54c8 !important;
+  background-color: #F6F6F6;
+  width: 100%;
+  min-height:100vh;
+  direction: ltr;
+  overflow: auto;
+}
+
+/*  start scroll  */
+::-webkit-scrollbar {
+  width: 0;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 10px;
+}
+/*  End Scroll  */
+
+.font-bold {
+  font-weight: 600 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

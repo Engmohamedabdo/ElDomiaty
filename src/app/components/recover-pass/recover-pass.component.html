@@ -1,0 +1,38 @@
+<section class="">
+
+
+
+  <div class="login">
+    <div class="container" data-aos="fade-down" data-aos-duration="500">
+      <div class="form">
+        <div class="title" data-aos="fade-down" data-aos-duration="800">Forgot Password</div>
+        <form action="#" [formGroup]="recoverForm" (ngSubmit)="recoverPassword()">
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1000">
+            <input type="text" formControlName="email" id="" placeholder="Enter Your Email" required>
+            <i class="uil uil-envelope icon"></i>
+            <button class="btn btn-primary send-otp position-absolute" [disabled]="recoverForm.invalid"
+              (click)="recoverPassword()">Send</button>
+            <span class="text-danger ml-2 mt-1" *ngIf="email && email.invalid && email.touched ">*Email is
+              required</span>
+          </div>
+        </form>
+        <form [formGroup]="otpForm" (ngSubmit)="sendOtp" *ngIf="otpCode">
+          <div class="form-group" data-aos="fade-down" data-aos-duration="1200">
+            <input type="text" formControlName="otp" id="" placeholder="Enter Your OTP" maxlength="6" required>
+            <i class="uil uil-keyhole-circle icon"></i>
+            <span class="text-danger ml-2 mt-1" *ngIf="otp && otp.invalid && otp.touched ">*OTP is required</span>
+          </div>
+          <div class="form-group button text-center" data-aos="fade-down" data-aos-duration="1400">
+            <button type="button" [disabled]="otpForm.invalid" (click)="sendOtp()"
+              class="btn btn-success w-100 py-3">RESET PASSWORD</button>
+          </div>
+        </form>
+        <div class="login-signup" data-aos="fade-down" data-aos-duration="1600">
+          <span class="text">Not a member?
+            <a routerLink="/login" class="text signup-text">Sign in now</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

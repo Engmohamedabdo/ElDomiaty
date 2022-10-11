@@ -1,0 +1,156 @@
+
+.product {
+  position: relative;
+  color: #fff;
+  margin: 20px 0;
+  // box-shadow: 1px 1px 6px #fff;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  text-align: center;
+  // border: 3px solid #fff;
+  transition: var(--main-transition);
+  cursor: pointer;
+  box-shadow: 1px 1px 5px #e3e3e3;
+}
+
+.product:hover {
+  // border-radius: 0 20px;
+  // border: 3px solid var(--main-color-rating);
+  box-shadow: 1px 1px 5px #c7c7c7;
+}
+
+.product .product-img {
+  height: 250px;
+  // max-height: 250px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.product-details h2 {
+  font: 600 22px !important;
+}
+
+.product-fav {
+  position: absolute;
+  top: 1px;
+  right: -40px;
+  transition: var(--main-transition);
+}
+
+.product-sale {
+  position: absolute;
+  background: var(--main-color-hover);
+  color: #fff;
+  top: 1px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  transition: var(--main-transition);
+}
+
+.product-sale h3 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.product:hover .product-fav {
+  right: 4px;
+}
+
+.product-fav i {
+  font-size: 24px;
+}
+
+.size-card {
+  justify-content: space-evenly;
+}
+
+.size-card p {
+  font-size: 22px;
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  background: #fff;
+  transition: var(--main-transition);
+}
+
+.size-card p:hover {
+  color: #fff !important;
+  background-color: var(--main-color-hover);
+}
+
+.price {
+  transition: var(--main-transition);
+}
+
+.product:hover .product-details .price {
+  display: none;
+}
+
+.price p {
+  margin: 0;
+  height: 42px;
+  font-size: 22px;
+  transition: var(--main-transition);
+}
+
+.price-offers {
+  color: var(--main-color-hover);
+}
+
+.btns {
+  transition: var(--main-transition);
+  display: none;
+}
+
+.product:hover .product-details .btns {
+  display: block;
+}
+
+/* From uiverse.io by @barisdogansutcu */
+.btn {
+  position: relative;
+  // width: 100px;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  color: #000;
+  background: none;
+  font-size: 20px;
+  // border: solid 1px var(--main-color-hover);
+  border: none;
+  transition: var(--main-transition);
+}
+
+.btn:hover {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--main-color-hover);
+}
+
+.main-content {
+  flex: 1 0 100%;
+  background: none;
+  padding: 10px 20px;
+
+  .main-header {
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 25px;
+    margin: 10px 0 0;
+    min-width: 200px;
+
+    .as-title {
+      display: block;
+      width: auto;
+      float: left;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.5 !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-bottom: 0;
+    }
+  }
+}

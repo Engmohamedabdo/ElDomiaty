@@ -1,0 +1,25 @@
+.tables {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.details {
+  transition: var(--main-transition);
+}
+
+.details:hover {
+  box-shadow: 0 0 5px 5px #eee;
+}
+
+.item {
+  // width: 300px;
+  max-width: 300px;
+}
+
+@media (min-width: 770px) {
+
+  .item {
+    width: 300px;
+  }
+
+}

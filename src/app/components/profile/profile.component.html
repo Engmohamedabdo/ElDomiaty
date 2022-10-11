@@ -1,0 +1,130 @@
+<section class="">
+
+
+
+  <div class="profile">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0 w-75" data-aos="fade-down" data-aos-duration="800">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <div class="iamge">
+                  <input type="file" name="" id="" class="d-none">
+                  <img [src]="imageBaseUrl+user?.img" data-aos="fade-down" data-aos-duration="1000" alt="logo"
+                    class="img-fluid my-5" style="width: 100px;height: 100px; border-radius: 50%;" />
+                </div>
+                <!-- <div class="image position-relative">
+                    <label for="upload">
+                      <i for="upload" class="far fa-edit mb-5 position-absolute"></i>
+                    </label>
+                    <input type="file" name="" id="upload" accept="image/png, image/gif, image/jpeg" hidden>
+                </div> -->
+                <h5 data-aos="fade-down" data-aos-duration="1400">{{user?.firstName}} {{user?.lastName}}</h5>
+                <!-- <p data-aos="fade-down" data-aos-duration="1400">Web Designer</p> -->
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4" data-aos="fade-down" data-aos-duration="1200">
+                  <h6>Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p class="text-muted">{{user?.email}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Phone</h6>
+                      <p class="text-muted">{{user?.phoneNumber}}</p>
+                    </div>
+                  </div>
+                  <h6>Edit</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <!-- <div class="col-4 mb-3">
+                      <h6>Wallet</h6>
+                      <button type="button" data-toggle="modal" data-target="#modalWallet" class="btn btn-info">Show All
+                        Wallet</button>
+                    </div> -->
+                    <!-- <div class="col-6 mb-3">
+                      <h6>Reset password</h6>
+                      <button type="button" routerLink="/recoverPass" class="btn btn-secondary">Reset Password</button>
+                    </div> -->
+                    <div class="col-12 mb-3">
+                      <!-- <h6>ُEdit Profile</h6> -->
+                      <button type="button" data-toggle="modal" data-target="#editProfileModal"
+                        class="btn btn-warning">Edit Profile</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Modal Wallet -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit Profile</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <form [formGroup]="profileForm" (ngSubmit)="editProfile()">
+              <!-- <form action="" (ngSubmit)="editProfile()"> -->
+              <div class="input-group my-3 justify-content-center upload">
+                <div class="image">
+                  <label for="upload" class="labelUpload" data-toggle="tooltip" data-placement="top" title="Edit Image">
+                    <i class="fa-solid fa-user-pen"></i>
+                  </label>
+                  <input type="file" formControlName="img" id="upload" (change)="onFileChanged($event)"
+                    accept="image/png, image/gif, image/jpeg">
+                  <img [src]="imageBaseUrl+user.img" class="" alt="">
+                </div>
+              </div>
+              <div class="input-group my-3">
+                <input type="text" [(ngModel)]="user.firstName" formControlName="firstName" class="form-control"
+                  placeholder="First Name" required>
+                <!-- <span class="text-danger ml-2 mt-1"
+                  *ngIf="firstName && firstName.invalid && firstName.touched ">*firstName is
+                  required</span>
+                -->
+              </div>
+              <div class="input-group my-3">
+                <input type="text" [(ngModel)]="user.lastName" formControlName="lastName" class="form-control"
+                  placeholder="Last Name">
+              </div>
+              <div class="input-group my-3">
+                <input type="email" [(ngModel)]="user.email" formControlName="email" class="form-control"
+                  placeholder="Email">
+              </div>
+              <div class="input-group my-3">
+                <input type="text" [(ngModel)]="user.phoneNumber" formControlName="tel" class="form-control"
+                  placeholder="phone">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-around">
+        <!-- <button type="button" class="btn btn-primary">Done</button> -->
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="editProfile()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
