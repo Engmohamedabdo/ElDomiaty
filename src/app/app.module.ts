@@ -88,6 +88,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {CascadeSelectModule} from 'primeng/cascadeselect';
 import {ImageModule} from 'primeng/image';
 
+// Looding
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 import { LoginComponent } from './components/login/login.component';
@@ -202,6 +204,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     NgbCarouselModule,
     NgbModule,
 
+    // Lodding
+    NgxSpinnerModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

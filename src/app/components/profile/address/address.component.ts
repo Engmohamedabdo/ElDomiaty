@@ -3,6 +3,7 @@ import { Utilt, Address } from './../../../services/global-services.service';
 import { HttpHealperService } from 'src/app/services/HttpHealper.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-address',
@@ -13,6 +14,7 @@ export class AddressComponent implements OnInit {
   @ViewChild('edit') edit: any;
   @ViewChild('delete') delete: any;
 
+  loading= false;
   allAddress: any;
   addressId: any;
   regions: any;
@@ -20,6 +22,7 @@ export class AddressComponent implements OnInit {
   id: any = 1;
 
   constructor(
+    private spinner: NgxSpinnerService,
     private http: HttpHealperService,
     private httpClient: HttpClient
   ) {}
@@ -47,10 +50,12 @@ export class AddressComponent implements OnInit {
 
     this.http.getHeader(Utilt.GetRegionOrCity, header).subscribe({
       next: (res) => {
+        this.spinner.hide();
         this.citys = res.result.regiorcity;
         // console.log(this.citys);
       },
       error: (err) => {
+        this.spinner.show();
         console.log(err);
       },
     });
@@ -110,6 +115,7 @@ export class AddressComponent implements OnInit {
 
   address() {
     this.postAddress();
+
   }
 
   postAddress() {
@@ -122,6 +128,7 @@ export class AddressComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
+          this.getAddress();
         },
         error: (err) => {
           console.log(err);
@@ -136,6 +143,7 @@ export class AddressComponent implements OnInit {
 
     this.http.getHeader(Address.GetAddress + '?page=1', header).subscribe({
       next: (res) => {
+        this.loading =true;
         this.allAddress = res.result.useradresses;
         console.log(this.allAddress);
       },
@@ -249,6 +257,7 @@ export class AddressComponent implements OnInit {
     this.getUtiltCity();
     this.resionOption(event);
     this.getAddress();
+    this.spinner.show();
   }
 
   removeEntity(id: any) {

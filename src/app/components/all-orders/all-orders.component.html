@@ -1,267 +1,570 @@
 <section class="all position-relative">
-
   <!-- background -->
-
 
   <div class="allOrders">
     <div class="container">
       <div class="row mt-5">
-        <div class="col-6 text-center my-5" data-aos="fade-down" data-aos-duration="800">
-
-          <a class="order-previous d-flex justify-content-end" (click)="PreviousOrders()">
+        <div
+          class="col-6 text-center my-5"
+          data-aos="fade-down"
+          data-aos-duration="800"
+        >
+          <div class="order-previous d-flex justify-content-end">
             <!-- <span>Previous orders</span> -->
-            <button class="btn-previous">Previous orders</button>
-          </a>
-
+            <button id="previous" (click)="previousOrders()">
+              Previous orders
+            </button>
+          </div>
         </div>
 
-        <div class="col-6 text-center my-5" data-aos="fade-down" data-aos-duration="800">
-
-          <a class="order-current d-flex justify-content-start" href="#previous">
+        <div
+          class="col-6 text-center my-5"
+          data-aos="fade-down"
+          data-aos-duration="800"
+        >
+          <div class="order-current d-flex justify-content-start">
             <!-- <span>Current orders</span> -->
-            <button class="btn-current">Current orders</button>
-          </a>
-
+            <button id="current" (click)="currentOrders()">
+              Current orders
+            </button>
+          </div>
         </div>
 
-        <div class="col-12" *ngIf="!current" id="current" data-aos="fade-down" data-aos-duration="1000">
+        <!-- div current -->
+        <div
+          class="col-12"
+          *ngIf="!current"
+          id="current"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <div class="orders m-0">
             <div class="row">
               <!-- <h1 class="text-center font-weight-bold">Current orders</h1> -->
 
               <!-- Cart -->
-              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
-                <div class="row m-2 cart" style="background-color: #fff;">
-
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
                   <div class="col-3 p-0">
-                    <div class="image w-100" style="background-color: #fff;">
-                      <img src="../../../assets//Home/Sweets-PNG-Clipart.png" class="w-100" alt="">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
                     </div>
                   </div>
 
                   <div class="col-6 d-flex align-items-center p-0">
-
                     <div class="col-12 p-0">
                       <div class="details text-center">
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order number:
+                          <h3 class="m-0">
+                            Order number:
                             <span class="font-weight-bold m-0"> #52554</span>
                           </h3>
                         </div>
 
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order Date:
-                            <span class="font-weight-bold m-0"> 20-05-2022</span>
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
                           </h3>
                         </div>
 
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order Price:
-                            <span class="font-weight-bold m-0"> EGP 250.00</span>
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
                           </h3>
                         </div>
-
                       </div>
                     </div>
-
                   </div>
 
                   <div class="col-3 mr-0">
-                    <div class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100">
-                      <button class="btn btn-primary btn-md w-75" routerLink="/order-details">Details</button>
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
                     </div>
                   </div>
-
                 </div>
               </div>
 
               <!-- Cart -->
-              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
-                <div class="row m-2 cart" style="background-color: #fff;">
-
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
                   <div class="col-3 p-0">
-                    <div class="image w-100" style="background-color: #fff;">
-                      <img src="../../../assets//Home/Sweets-PNG-Clipart.png" class="w-100" alt="">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
                     </div>
                   </div>
 
                   <div class="col-6 d-flex align-items-center p-0">
-
                     <div class="col-12 p-0">
                       <div class="details text-center">
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order number:
+                          <h3 class="m-0">
+                            Order number:
                             <span class="font-weight-bold m-0"> #52554</span>
                           </h3>
                         </div>
 
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order Date:
-                            <span class="font-weight-bold m-0"> 20-05-2022</span>
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
                           </h3>
                         </div>
 
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order Price:
-                            <span class="font-weight-bold m-0"> EGP 250.00</span>
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
                           </h3>
                         </div>
-
                       </div>
                     </div>
-
                   </div>
 
                   <div class="col-3 mr-0">
-                    <div class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100">
-                      <button class="btn btn-primary btn-md w-75" routerLink="/order-details">Details</button>
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
                     </div>
                   </div>
-
                 </div>
               </div>
 
               <!-- Cart -->
-              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
-                <div class="row m-2 cart" style="background-color: #fff;">
-
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
                   <div class="col-3 p-0">
-                    <div class="image w-100" style="background-color: #fff;">
-                      <img src="../../../assets//Home/Sweets-PNG-Clipart.png" class="w-100" alt="">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
                     </div>
                   </div>
 
                   <div class="col-6 d-flex align-items-center p-0">
-
                     <div class="col-12 p-0">
                       <div class="details text-center">
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order number:
+                          <h3 class="m-0">
+                            Order number:
                             <span class="font-weight-bold m-0"> #52554</span>
                           </h3>
                         </div>
 
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order Date:
-                            <span class="font-weight-bold m-0"> 20-05-2022</span>
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
                           </h3>
                         </div>
 
                         <div class="or-num d-flex m-2">
-                          <h3 class=" m-0">Order Price:
-                            <span class="font-weight-bold m-0"> EGP 250.00</span>
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
                           </h3>
                         </div>
-
                       </div>
                     </div>
-
                   </div>
 
                   <div class="col-3 mr-0">
-                    <div class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100">
-                      <button class="btn btn-primary btn-md w-75" routerLink="/order-details">Details</button>
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
                     </div>
                   </div>
-
                 </div>
               </div>
 
               <!-- Cart -->
-              <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
-                <div class="row m-4 rounded-lg" style="background-color: #fff;">
-
-                  <div class="col-12 p-0">
-                    <div class="image w-100" style="background-color: #fff;">
-                      <img src="../../../assets//Home/Sweets-PNG-Clipart.png" class="w-100" alt="">
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
+                  <div class="col-3 p-0">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
                     </div>
                   </div>
 
-                  <div class="col-12 p-0">
-                    <div class="details text-center">
-                      <div class="or-num d-flex justify-content-center m-2">
-                        <h3 class="px-1">Order number: </h3>
-                        <h3 class="font-weight-bold">2554</h3>
+                  <div class="col-6 d-flex align-items-center p-0">
+                    <div class="col-12 p-0">
+                      <div class="details text-center">
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order number:
+                            <span class="font-weight-bold m-0"> #52554</span>
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
+                          </h3>
+                        </div>
                       </div>
-
-                      <div class="or-num d-flex justify-content-center m-2">
-                        <h3 class="px-1">Order Date: </h3>
-                        <h3 class="font-weight-bold">20-05-2022</h3>
-                      </div>
-
-
-                      <div class="or-num d-flex justify-content-center m-2">
-                        <h3 class="px-1">Order Price: </h3>
-                        <h3 class="font-weight-bold">EGP 250.00</h3>
-                      </div>
-
-                      <div class="or-num d-flex justify-content-center mb-3">
-                        <button class="btn btn-primary w-50" routerLink="/order-details">Details</button>
-                      </div>
-
                     </div>
                   </div>
 
+                  <div class="col-3 mr-0">
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div> -->
+              </div>
 
             </div>
           </div>
         </div>
 
-
-        <div class="col-12" *ngIf="!previous" id="previous" data-aos="fade-down" data-aos-duration="1000">
+        <!-- div previous -->
+        <div
+          class="col-12"
+          *ngIf="!previous"
+          id="previous"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <div class="orders mx-3">
             <div class="row">
-              <h1 class="text-center font-weight-bold">Previous orders</h1>
               <!-- Cart -->
-              <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" data-aos="fade-down" data-aos-duration="1000">
-                <div class="row m-4 rounded-lg" style="background-color: #fff;">
-
-                  <div class="col-12 p-0">
-                    <div class="image w-100" style="background-color: #fff;">
-                      <img src="../../../assets//Home/Sweets-PNG-Clipart.png" class="w-100" alt="">
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
+                  <div class="col-3 p-0">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
                     </div>
                   </div>
 
-                  <div class="col-12 p-0">
-                    <div class="details text-center">
-                      <div class="or-num d-flex justify-content-center m-2">
-                        <h3 class="px-1">Order number: </h3>
-                        <h3 class="font-weight-bold">2554</h3>
+                  <div class="col-6 d-flex align-items-center p-0">
+                    <div class="col-12 p-0">
+                      <div class="details text-center">
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order number:
+                            <span class="font-weight-bold m-0"> #52554</span>
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
+                          </h3>
+                        </div>
                       </div>
-
-                      <div class="or-num d-flex justify-content-center m-2">
-                        <h3 class="px-1">Order Date: </h3>
-                        <h3 class="font-weight-bold">20-05-2022</h3>
-                      </div>
-
-
-                      <div class="or-num d-flex justify-content-center m-2">
-                        <h3 class="px-1">Order Price: </h3>
-                        <h3 class="font-weight-bold">EGP 250.00</h3>
-                      </div>
-
-                      <div class="or-num d-flex justify-content-center mb-3">
-                        <button class="btn btn-primary w-50" routerLink="/order-details">Details</button>
-                      </div>
-
                     </div>
                   </div>
 
+                  <div class="col-3 mr-0">
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div> -->
+              </div>
+
+              <!-- Cart -->
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
+                  <div class="col-3 p-0">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-6 d-flex align-items-center p-0">
+                    <div class="col-12 p-0">
+                      <div class="details text-center">
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order number:
+                            <span class="font-weight-bold m-0"> #52554</span>
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3 mr-0">
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cart -->
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
+                  <div class="col-3 p-0">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-6 d-flex align-items-center p-0">
+                    <div class="col-12 p-0">
+                      <div class="details text-center">
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order number:
+                            <span class="font-weight-bold m-0"> #52554</span>
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3 mr-0">
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cart -->
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 col-sm-12"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                <div class="row m-2 cart" style="background-color: #fff">
+                  <div class="col-3 p-0">
+                    <div class="image w-100" style="background-color: #fff">
+                      <img
+                        src="../../../assets//Home/Sweets-PNG-Clipart.png"
+                        class="w-100"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-6 d-flex align-items-center p-0">
+                    <div class="col-12 p-0">
+                      <div class="details text-center">
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order number:
+                            <span class="font-weight-bold m-0"> #52554</span>
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Date:
+                            <span class="font-weight-bold m-0">
+                              20-05-2022</span
+                            >
+                          </h3>
+                        </div>
+
+                        <div class="or-num d-flex m-2">
+                          <h3 class="m-0">
+                            Order Price:
+                            <span class="font-weight-bold m-0">
+                              EGP 250.00</span
+                            >
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3 mr-0">
+                    <div
+                      class="or-num d-flex justify-content-center align-items-end pb-3 w-100 h-100"
+                    >
+                      <button
+                        class="btn btn-primary btn-md w-75"
+                        routerLink="/order-details"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
         </div>
-
 
       </div>
     </div>
   </div>
-
-
-
-
 </section>

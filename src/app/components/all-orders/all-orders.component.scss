@@ -1,17 +1,5 @@
-
 .order-previous {
-  .btn-previous {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-weight: 500;
-    padding: 21px;
-    color: #000;
-    background-color: #fff;
-    line-height: 25px;
-  }
+  position: relative;
 
   button {
     padding: 0.8em 1.8em;
@@ -22,22 +10,24 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
-    transition: 0.3s;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: var(--main-transition);
     z-index: 1;
     font-family: inherit;
-    color: #fff;
+    color: #000;
   }
 
   button::before {
     content: "";
     width: 0;
-    height: 300%;
+    height: 400%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     background: #000;
-    transition: 0.5s ease;
+    transition: var(--main-transition);
     display: block;
     z-index: -1;
   }
@@ -48,26 +38,22 @@
 
   button:hover {
     color: #fff;
+    border-radius: 0 20px;
   }
+}
 
+.active {
+  color: #fff !important;
+  border-radius: 0 20px !important;
+  background: #000 !important;
+}
+
+.active:hover::before {
+  width: 105%;
 }
 
 .order-current {
-
   position: relative;
-
-  .btn-current {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-weight: 500;
-    padding: 21px;
-    color: #000;
-    background-color: #fff;
-    line-height: 25px;
-  }
 
   button {
     padding: 0.8em 1.8em;
@@ -78,22 +64,24 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
-    transition: 0.3s;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: var(--main-transition);
     z-index: 1;
     font-family: inherit;
-    color: #fff;
+    color: #000;
   }
 
   button::before {
     content: "";
     width: 0;
-    height: 300%;
+    height: 400%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     background: #000;
-    transition: 0.5s ease;
+    transition: var(--main-transition);
     display: block;
     z-index: -1;
   }
@@ -104,8 +92,8 @@
 
   button:hover {
     color: #fff;
+    border-radius: 0 20px;
   }
-
 }
 
 .order-title span {
@@ -127,7 +115,7 @@
 
 .cart {
   overflow: hidden;
-  border-radius: 0 30px !important;
+  border-radius: 0 20px !important;
   transition: var(--main-transition);
 }
 

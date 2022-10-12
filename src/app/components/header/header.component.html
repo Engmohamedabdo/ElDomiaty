@@ -77,19 +77,19 @@
 
 
             <button matTooltip="Search" class="nav-btn mb-0">
-              <i class='bx bx-search-alt' ></i>
+              <i class='bx bx-search-alt' routerLink="search" routerLinkActive="active"></i>
             </button>
 
             <button matTooltip="User" class="nav-btn mb-0">
-              <i class='bx bx-user'></i>
+              <i class='bx bx-user' routerLink="profile" routerLinkActive="active"></i>
             </button>
 
             <button matTooltip="Favourite" class="nav-btn mb-0">
-              <i class='bx bx-heart' ></i>
+              <i class='bx bx-heart' routerLink="favourite" routerLinkActive="active"></i>
             </button>
 
             <button matTooltip="Notifications" class="nav-btn mb-0">
-              <i class='bx bx-bell' ></i>
+              <i class='bx bx-bell' routerLink="notifications" routerLinkActive="active"></i>
             </button>
 
             <button matTooltip="LogOut" class="nav-btn mb-0" *ngIf="!btnLogin"
@@ -119,80 +119,3 @@
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addressModal">
   Launch demo modal
 </button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form>
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title font-weight m-0" id="addressModalLabel">Add To Address</h1>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <h1 class="text-center text-weight-bold">Choose city and region</h1>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="TextCity">The City Name</label>
-                  <input type="text" class="form-control" id="TextCity" placeholder="City Name">
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="selectCity">Select City</label>
-                  <select class="custom-select" id="selectCity">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="selectRegion">Select Region</label>
-                  <select class="custom-select" id="selectRegion">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="num">Number</label>
-                  <input type="tel" class="form-control" id="num" placeholder="Enter Your Number">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="textarea1">Address Details</label>
-                <textarea class="form-control" id="textarea1" rows="3" placeholder="Details"></textarea>
-              </div>
-              <div class="col-12">
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Default Address</label>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer d-flex justify-content-around">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save Address</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
